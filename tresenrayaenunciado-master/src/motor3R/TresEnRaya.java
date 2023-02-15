@@ -3,10 +3,17 @@ package motor3R;
 import java.util.Scanner;
 
 public class TresEnRaya {
-    private int casilla;
+    private int cont=0;
+    private int contO=0;
     Scanner sc = new Scanner(System.in);
 
     public TresEnRaya() {
+    }
+    public int getCont(){
+        return this.cont;
+    }
+    public int getContO(){
+        return this.contO;
     }
 
     private char[][] tablero = {
@@ -49,7 +56,138 @@ public class TresEnRaya {
         }
         this.tablero[casillaXo][casillaYo]=simboloO;
     }
-    public void comprobarGanador(int casilla,char simbolo,char simboloO){
-       
+    public char comprobarGanador(char simbolo,char simboloO){
+        //horizontal | izquierda
+        if(this.tablero[0][0]==simbolo){
+            if(this.tablero[0][1]==simbolo){
+                if(this.tablero[0][2]==simbolo){
+                    //indicar que gana xogador
+                    return 'j';
+                }
+            }
+        }else if(this.tablero[0][0]==simboloO){
+            if (this.tablero[0][1]==simboloO) {
+                if (this.tablero[0][2]==simboloO) {
+                    //indicar que gana pc
+                    return 'm';
+                }
+            }
+
+        }
+        //horizontal | medio
+        if(this.tablero[1][0]==simbolo){
+            if(this.tablero[1][1]==simbolo){
+                if(this.tablero[1][2]==simbolo){
+                    //indicar que gana xogador
+                    return 'j';
+                }
+            }
+        }else if(this.tablero[1][0]==simboloO){
+            if (this.tablero[1][1]==simboloO) {
+                if (this.tablero[1][2]==simboloO) {
+                    //indicar que gana pc
+                    return 'm';
+                }
+            }
+        }
+        //horizontal | derecha
+        if(this.tablero[2][0]==simbolo){
+            if(this.tablero[2][1]==simbolo){
+                if(this.tablero[2][2]==simbolo){
+                    //indicar que gana xogador
+                    return 'j';
+                }
+            }
+        }else if(this.tablero[2][0]==simboloO){
+            if (this.tablero[2][1]==simboloO) {
+                if (this.tablero[2][2]==simboloO) {
+                    //indicar que gana pc
+                    return 'm';
+                }
+            }
+
+        }
+        //vertical - de arriba
+        if(this.tablero[0][0]==simbolo){
+            if(this.tablero[1][0]==simbolo){
+                if(this.tablero[2][0]==simbolo){
+                    //indicar que gana xogador
+                    return 'j';
+                }
+            }
+        }else if(this.tablero[0][0]==simboloO){
+            if (this.tablero[1][0]==simboloO) {
+                if (this.tablero[2][0]==simboloO) {
+                    //indicar que gana pc
+                    return 'm';
+                }
+            }
+
+        }
+        //vertical - do medio
+        if(this.tablero[1][0]==simbolo){
+            if(this.tablero[1][1]==simbolo){
+                if(this.tablero[1][2]==simbolo){
+                    //indicar que gana xogador
+                    return 'j';
+                }
+            }
+        }else if(this.tablero[1][0]==simboloO){
+            if (this.tablero[1][1]==simboloO) {
+                if (this.tablero[1][2]==simboloO) {
+                    //indicar que gana pc
+                    return 'm';
+                }
+            }
+        }
+        // vertical _ de abajo del todo
+        if(this.tablero[2][0]==simbolo){
+            if(this.tablero[2][1]==simbolo){
+                if(this.tablero[2][2]==simbolo){
+                    //indicar que gana xogador
+                    return 'j';
+                }
+            }
+        }else if(this.tablero[2][0]==simboloO){
+            if (this.tablero[2][1]==simboloO) {
+                if (this.tablero[2][2]==simboloO) {
+                    //indicar que gana pc
+                    return 'm';
+                }
+            }
+        }
+        //diagonal \
+        if(this.tablero[0][0]==simbolo){
+            if(this.tablero[1][1]==simbolo){
+                if(this.tablero[2][2]==simbolo){
+                    //indicar que gana xogador
+                    return 'j';
+                }
+            }
+        }else if(this.tablero[0][0]==simboloO){
+            if (this.tablero[1][1]==simboloO) {
+                if (this.tablero[2][2]==simboloO) {
+                    //indicar que gana pc
+                    return 'm';
+                }
+            }
+        }
+        //diagonal /
+        if(this.tablero[2][0]==simbolo){
+            if(this.tablero[1][1]==simbolo){
+                if(this.tablero[0][2]==simbolo){
+                    //indicar que gana xogador
+                    return 'j';
+                }
+            }
+        }else if(this.tablero[2][0]==simboloO){
+            if (this.tablero[1][1]==simboloO) {
+                if (this.tablero[0][2]==simboloO) {
+                    //indicar que gana pc
+                    return 'm';
+                }
+            }
+        }
+        return ' ';
     }
 }

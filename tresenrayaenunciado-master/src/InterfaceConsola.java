@@ -27,6 +27,15 @@ public class InterfaceConsola extends TresEnRaya {
         }
         System.out.println("Jugador , donde deseas poner tu " + simbolo);
     }
+    public static void imprimirTablero2(TresEnRaya b, char simbolo) {
+        System.out.println("El tablero sera el siguiente");
+        for (int i = 0; i < b.getTablero().length; i++) {
+            for (int j = 0; j < b.getTablero()[0].length; j++) {
+                System.out.print(" " + b.getTablero()[i][j]);
+            }
+            System.out.println("");
+        }
+    }
     public static void main(String[] args) {
         char simbolo;
         char simboloO;
@@ -39,24 +48,28 @@ public class InterfaceConsola extends TresEnRaya {
         } else {
             simboloO = 'O';
         }
-        //primer turno
         System.out.println("Vale, jugaras con " + simbolo + " contra " + simboloO);
-        imprimirTablero(b, simbolo);
-        int casilla = sc.nextInt();
-        b.MeterValores(casilla,simbolo);
-        b.meterValoresMaquina(simbolo,simboloO);
-        imprimirTablero(b, simbolo);
+        int casilla;
+        //primer turno
+        while(b.comprobarGanador(simbolo, simboloO) == ' '){
+            imprimirTablero(b, simbolo);
+            casilla = sc.nextInt();
+            b.MeterValores(casilla,simbolo);
+            b.meterValoresMaquina(simbolo,simboloO);
+            imprimirTablero(b, simbolo);
+        }
+        /*
         //seegundo turno
         casilla = sc.nextInt();
         b.MeterValores(casilla,simbolo);
         b.meterValoresMaquina(simbolo,simboloO);
         imprimirTablero(b, simbolo);
-        //Tercer turno
+        //Tercer turnos
         casilla = sc.nextInt();
         b.MeterValores(casilla,simbolo);
-        //////////metodo comprobar ganador
-        b.meterValoresMaquina(simbolo,simboloO);
-        imprimirTablero(b, simbolo);
-
+        imprimirTablero2(b, simbolo);
+         */
+        if (b.comprobarGanador(simbolo, simboloO) == 'j') System.out.println("Gana jugador.");
+        if(b.comprobarGanador(simbolo, simboloO) == 'm') System.out.println("Gana maquina.");
     }
 }
