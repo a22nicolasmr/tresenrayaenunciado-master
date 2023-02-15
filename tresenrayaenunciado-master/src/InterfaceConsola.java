@@ -3,10 +3,6 @@ import motor3R.TresEnRaya;
 import java.util.random.*;
 
 public class InterfaceConsola extends TresEnRaya {
-    
-    private char simboloO;
-    private int casillaX;
-    private int casillaY;
     // private char casillaM;
     TresEnRaya a = new TresEnRaya();
 
@@ -40,7 +36,6 @@ public class InterfaceConsola extends TresEnRaya {
         char simbolo;
         char simboloO;
         Scanner sc = new Scanner(System.in);
-        InterfaceConsola a1 = new InterfaceConsola();
         TresEnRaya b = new TresEnRaya();
         simbolo = PreguntarCosas();
         if (simbolo == 'O') {
@@ -55,14 +50,7 @@ public class InterfaceConsola extends TresEnRaya {
             casilla = sc.nextInt();
             b.MeterValores(casilla,simbolo);
             b.meterValoresMaquina(simbolo,simboloO);
-        while(b.comprobarGanador(simbolo, simboloO) == ' '){
             imprimirTablero(b, simbolo);
-            casilla = sc.nextInt();
-            b.MeterValores(casilla,simbolo);
-            b.meterValoresMaquina(simbolo,simboloO);
-            imprimirTablero(b, simbolo);
-        }
-        
         //seegundo turno
         casilla = sc.nextInt();
         b.MeterValores(casilla,simbolo);
