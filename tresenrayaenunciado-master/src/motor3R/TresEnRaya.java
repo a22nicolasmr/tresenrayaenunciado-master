@@ -50,14 +50,6 @@ public class TresEnRaya {
         this.tablero[casillaXo][casillaYo]=simboloO;
     }
     public void comprobarGanador(int casilla,char simbolo,char simboloO){
-       for (int i = 0; i < tablero.length; i++) {
-            for (int j = 0; j < tablero[0].length; j++) {
-                if(tablero[i][j]==simbolo){
-                    if(tablero[i][j]==simbolo){
-                        
-                    }
-                }
-            }
-       }
+       
     }
 }
