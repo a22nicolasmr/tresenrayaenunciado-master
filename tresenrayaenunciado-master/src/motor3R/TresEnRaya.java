@@ -3,27 +3,28 @@ package motor3R;
 import java.util.Scanner;
 
 public class TresEnRaya {
-    private int cont=0;
-    private int contO=0;
     Scanner sc = new Scanner(System.in);
 
+    private char[][] tablero;
+    
     public TresEnRaya() {
+        tablero = new char[][] {
+            { '1', '2', '3' },
+            { '4', '5', '6' },
+            { '7', '8', '9' },
+        };
     }
-    public int getCont(){
-        return this.cont;
-    }
-    public int getContO(){
-        return this.contO;
-    }
-
+    /*
     private char[][] tablero = {
             { '1', '2', '3' },
             { '4', '5', '6' },
             { '7', '8', '9' },
     };
+     */
 
     public char[][] getTablero() {
-        return tablero;
+        char[][] t = tablero;
+        return t;
     }
 
     public void MeterValores(int casilla,char simbolo) {

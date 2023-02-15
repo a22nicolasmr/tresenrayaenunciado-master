@@ -51,6 +51,10 @@ public class InterfaceConsola extends TresEnRaya {
         System.out.println("Vale, jugaras con " + simbolo + " contra " + simboloO);
         int casilla;
         //primer turno
+            imprimirTablero(b, simbolo);
+            casilla = sc.nextInt();
+            b.MeterValores(casilla,simbolo);
+            b.meterValoresMaquina(simbolo,simboloO);
         while(b.comprobarGanador(simbolo, simboloO) == ' '){
             imprimirTablero(b, simbolo);
             casilla = sc.nextInt();
@@ -70,6 +74,6 @@ public class InterfaceConsola extends TresEnRaya {
         imprimirTablero2(b, simbolo);
          */
         if (b.comprobarGanador(simbolo, simboloO) == 'j') System.out.println("Gana jugador.");
-        if(b.comprobarGanador(simbolo, simboloO) == 'm') System.out.println("Gana maquina.");
+        if (b.comprobarGanador(simbolo, simboloO) == 'm') System.out.println("Gana maquina.");
     }
 }
