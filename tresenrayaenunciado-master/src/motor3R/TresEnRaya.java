@@ -4,24 +4,11 @@ import java.util.Scanner;
 
 public class TresEnRaya {
     Scanner sc = new Scanner(System.in);
-
-    private char[][] tablero;
-    
-    public TresEnRaya() {
-        tablero = new char[][] {
-            { '1', '2', '3' },
-            { '4', '5', '6' },
-            { '7', '8', '9' },
-        };
-    }
-    /*
     private char[][] tablero = {
             { '1', '2', '3' },
             { '4', '5', '6' },
             { '7', '8', '9' },
     };
-     */
-
     public char[][] getTablero() {
         char[][] t = tablero;
         return t;
